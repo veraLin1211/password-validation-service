@@ -5,7 +5,8 @@ import com.example.demo.validation.character.rule.DigitRules;
 import com.example.demo.validation.character.rule.LowerCaseRules;
 import com.example.demo.validation.character.rule.SymbolRules;
 import com.example.demo.validation.character.rule.UpperCaseRules;
-import com.example.demo.validation.length.MaxMinRule;
+import com.example.demo.validation.other.MaxMinLengthRule;
+import com.example.demo.validation.other.NoRepeatRule;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -65,8 +66,13 @@ public class RuleConfiguration {
     }
 
     @Bean
-    public MaxMinRule getMaxMinRule() {
-        return new MaxMinRule(maxLength, minLength);
+    public MaxMinLengthRule getMaxMinLengthRule() {
+        return new MaxMinLengthRule(maxLength, minLength);
+    }
+
+    @Bean
+    public NoRepeatRule getNoRepeatRule() {
+        return new NoRepeatRule();
     }
 
     private boolean isTypeEnable(String type) {

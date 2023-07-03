@@ -1,8 +1,7 @@
-package com.example.demo.validation.rule;
+package com.example.demo.validation.character.rule;
 
 import com.example.demo.constant.CharTypes;
-import com.example.demo.validation.rule.evaluation.Evaluation;
-import jakarta.annotation.PostConstruct;
+import com.example.demo.validation.character.rule.evaluation.Evaluation;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 

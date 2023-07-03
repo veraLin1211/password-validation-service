@@ -1,4 +1,4 @@
-package com.example.demo.validation.rule;
+package com.example.demo.validation.character.rule;
 
 
 import com.example.demo.constant.CharTypes;

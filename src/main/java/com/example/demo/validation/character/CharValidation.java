@@ -1,6 +1,7 @@
-package com.example.demo.validation;
+package com.example.demo.validation.character;
 
-import com.example.demo.validation.rule.CharValidationRules;
+import com.example.demo.validation.PasswordValidation;
+import com.example.demo.validation.character.rule.CharValidationRules;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -1,6 +1,11 @@
-package com.example.demo.validation.rule;
+package com.example.demo.validation.configuration;
 
 import com.example.demo.constant.CharTypes;
+import com.example.demo.validation.character.rule.DigitRules;
+import com.example.demo.validation.character.rule.LowerCaseRules;
+import com.example.demo.validation.character.rule.SymbolRules;
+import com.example.demo.validation.character.rule.UpperCaseRules;
+import com.example.demo.validation.length.MaxMinRule;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,6 +29,12 @@ public class RuleConfiguration {
 
     @Value("${password-validation.char.min.symbol}")
     private int minSymbolChar;
+
+    @Value("${password-validation.length.min}")
+    private int minLength;
+
+    @Value("${password-validation.length.max}")
+    private int maxLength;
 
     @Bean
     public UpperCaseRules getUpperCaseRules() {
@@ -51,6 +62,11 @@ public class RuleConfiguration {
         CharTypes type = CharTypes.LOWER_CASE;
         boolean enable = isTypeEnable(type.name());
         return new SymbolRules(enable, minLowerCaseChar, type);
+    }
+
+    @Bean
+    public MaxMinRule getMaxMinRule() {
+        return new MaxMinRule(maxLength, minLength);
     }
 
     private boolean isTypeEnable(String type) {

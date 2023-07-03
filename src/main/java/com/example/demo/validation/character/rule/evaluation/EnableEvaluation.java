@@ -1,6 +1,6 @@
-package com.example.demo.validation.rule.evaluation;
+package com.example.demo.validation.character.rule.evaluation;
 
-import com.example.demo.validation.rule.CharValidationRules;
+import com.example.demo.validation.character.rule.CharValidationRules;
 import org.springframework.stereotype.Component;
 
 @Component

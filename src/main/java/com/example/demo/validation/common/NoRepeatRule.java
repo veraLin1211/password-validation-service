@@ -1,15 +1,15 @@
-package com.example.demo.validation.other;
+package com.example.demo.validation.common;
 
 
-public class NoRepeatRule extends OtherValidationRules{
+public class NoRepeatRule extends CommonValidationRules {
 
     @Override
     public boolean validate(String password) {
-        return !hasRepeatedPattern(password);
+        return noRepeatPattern(password);
     }
 
-    public boolean hasRepeatedPattern(String str) {
-            boolean result = false;
+    public boolean noRepeatPattern(String str) {
+            boolean result = true;
             if (str == null) {
                 return false;
             }
@@ -21,13 +21,13 @@ public class NoRepeatRule extends OtherValidationRules{
                     String first = str.substring(firstPos, firstPos+patternLen);
                     String second = str.substring(secondPos, secondPos+patternLen);
                     if(first.equals(second)) {
-                        result = true;
+                        result = false;
                         break;
                     }
                     firstPos++;
                     secondPos++;
                 }
-                if(result) break;
+                if(!result) break;
             }
         return result;
     }

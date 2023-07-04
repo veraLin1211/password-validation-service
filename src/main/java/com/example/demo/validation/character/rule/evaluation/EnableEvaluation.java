@@ -1,18 +1,27 @@
 package com.example.demo.validation.character.rule.evaluation;
 
-import com.example.demo.validation.character.rule.CharValidationRules;
+import com.example.demo.validation.character.model.dto.CharConfig;
 import org.springframework.stereotype.Component;
 
 @Component
 public class EnableEvaluation implements Evaluation {
 
     @Override
-    public boolean evaluate(String password, CharValidationRules rule) {
-        System.out.println("evaluate enable");
-        if(!rule.isEnable()) {
-            return !password.matches(rule.getRegexPattern());
+    public boolean evaluate(String password, CharConfig config) {
+        if(config.isEnable()) {
+            return true;
+        } else {
+            return passwordNotMatchPattern(password, config);
         }
-        return true;
+    }
+
+    private boolean passwordNotMatchPattern(String password, CharConfig config) {
+        String pattern = getRegexPattern(config);
+        return !password.matches(pattern);
+    }
+
+    private String getRegexPattern(CharConfig config) {
+        return config.getCharType().getRegexPattern();
     }
 
 }

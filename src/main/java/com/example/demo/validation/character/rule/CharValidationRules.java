@@ -9,11 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Getter
 public abstract class CharValidationRules {
 
     @Autowired
-    List<Evaluation> evaluations;
+    private List<Evaluation> evaluations;
 
     public CharValidationRules(boolean enable, int minCount, CharType chartType) {
         this.enable = enable;
@@ -21,18 +20,21 @@ public abstract class CharValidationRules {
         this.chartType = chartType;
     }
 
-    boolean enable;
+    private boolean enable;
 
-    int minCount;
+    private int minCount;
 
-    String regexPattern;
-
-    CharTypes chartType;
+    private CharType chartType;
 
     public boolean validateAll(String password) {
         List<Boolean> results = evaluations.stream().map(it -> {
-            return it.evaluate(password, this);
+            CharConfig config = new CharConfig(this.chartType, this.enable, this.minCount);
+            return it.evaluate(password, config);
         }).collect(Collectors.toList());
+        return isAllValid(results);
+    }
+
+    private boolean isAllValid(List<Boolean> results) {
         return !results.contains(false);
     }
 

@@ -1,6 +1,7 @@
 package com.example.demo.validation.character.rule;
 
-import com.example.demo.constant.CharTypes;
+import com.example.demo.validation.character.constant.CharType;
+import com.example.demo.validation.character.model.dto.CharConfig;
 import com.example.demo.validation.character.rule.evaluation.Evaluation;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +15,9 @@ public abstract class CharValidationRules {
     @Autowired
     List<Evaluation> evaluations;
 
-    public CharValidationRules(boolean enable, int minCount, CharTypes chartType) {
+    public CharValidationRules(boolean enable, int minCount, CharType chartType) {
         this.enable = enable;
         this.minCount = minCount;
-        this.regexPattern = chartType.getRegexPattern();
         this.chartType = chartType;
     }
 

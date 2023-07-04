@@ -1,6 +1,6 @@
 package com.example.demo.validation.configuration;
 
-import com.example.demo.constant.CharTypes;
+import com.example.demo.validation.character.constant.CharType;
 import com.example.demo.validation.character.rule.DigitRules;
 import com.example.demo.validation.character.rule.LowerCaseRules;
 import com.example.demo.validation.character.rule.SymbolRules;
@@ -39,28 +39,28 @@ public class RuleConfiguration {
 
     @Bean
     public UpperCaseRules getUpperCaseRules() {
-        CharTypes type = CharTypes.UPPER_CASE;
+        CharType type = CharType.UPPER_CASE;
         boolean enable = isTypeEnable(type.name());
         return new UpperCaseRules(enable, minUpperCaseChar, type);
     }
 
     @Bean
     public LowerCaseRules getLowerCaseRules() {
-        CharTypes type = CharTypes.LOWER_CASE;
+        CharType type = CharType.LOWER_CASE;
         boolean enable = isTypeEnable(type.name());
         return new LowerCaseRules(enable, minLowerCaseChar, type);
     }
 
     @Bean
     public DigitRules getDigitRules() {
-        CharTypes type = CharTypes.LOWER_CASE;
+        CharType type = CharType.DIGIT;
         boolean enable = isTypeEnable(type.name());
         return new DigitRules(enable, minLowerCaseChar, type);
     }
 
     @Bean
     public SymbolRules getSymbolRules() {
-        CharTypes type = CharTypes.LOWER_CASE;
+        CharType type = CharType.LOWER_CASE;
         boolean enable = isTypeEnable(type.name());
         return new SymbolRules(enable, minLowerCaseChar, type);
     }

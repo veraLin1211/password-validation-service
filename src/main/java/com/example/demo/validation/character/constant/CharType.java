@@ -1,9 +1,9 @@
-package com.example.demo.constant;
+package com.example.demo.validation.character.constant;
 
 import lombok.Getter;
 
 @Getter
-public enum CharTypes {
+public enum CharType {
     UPPER_CASE(".*[A-Z].*") {
         @Override
         public boolean matchCharType(char c) {
@@ -32,7 +32,7 @@ public enum CharTypes {
 
     private final String regexPattern;
 
-    CharTypes(String regexPattern) {
+    CharType(String regexPattern) {
         this.regexPattern = regexPattern;
     }
 

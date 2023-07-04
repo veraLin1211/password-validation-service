@@ -1,9 +1,9 @@
 package com.example.demo.validation.character.rule.evaluation;
 
-import com.example.demo.validation.character.rule.CharValidationRules;
+import com.example.demo.validation.character.model.dto.CharConfig;
 
 public interface Evaluation {
 
-    public boolean evaluate(String password, CharValidationRules rule);
+    boolean evaluate(String password, CharConfig config);
 
 }

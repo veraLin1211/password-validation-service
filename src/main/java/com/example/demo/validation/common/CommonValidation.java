@@ -18,10 +18,10 @@ public class CommonValidation implements PasswordValidation {
         List<Boolean> results = rules.stream().map(it -> {
             return it.validate(password);
         }).collect(Collectors.toList());
-        return allValid(results);
+        return isAllValid(results);
     }
 
-    private boolean allValid(List<Boolean> results) {
+    private boolean isAllValid(List<Boolean> results) {
         return !results.contains(false);
     }
 

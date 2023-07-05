@@ -44,4 +44,3 @@ The file `password-validation-service-1.0.0-SNAPSHOT.jar` will be put under targ
 ```
 3. Run `./mvnw install`
 4. Put the @ValidatePassword annotation on the field you want to validate 
->>>>>>> 1356ff6... feat: update README.md

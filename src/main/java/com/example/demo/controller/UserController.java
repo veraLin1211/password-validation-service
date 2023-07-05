@@ -12,6 +12,8 @@ public class UserController {
 
     @PostMapping("/register")
     public String register(@Valid @RequestBody RegisterReq req) {
+        System.out.println("account: " + req.getAccount());
+        System.out.println("password: " + req.getPassword());
         return "success";
     }
 

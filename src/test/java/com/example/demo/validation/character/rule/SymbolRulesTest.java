@@ -1,6 +1,5 @@
 package com.example.demo.validation.character.rule;
 
-import com.example.demo.validation.character.rule.SymbolRules;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -18,10 +18,16 @@
 	</properties>
 	<dependencies>
 		<dependency>
+			<groupId>com.example</groupId>
+			<artifactId>password-validation-service</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/local-maven-repo/password-validation-service-1.0.0-SNAPSHOT.jar</systemPath>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>

@@ -55,14 +55,14 @@ public class RuleConfiguration {
     public DigitRules getDigitRules() {
         CharType type = CharType.DIGIT;
         boolean enable = isTypeEnable(type.name());
-        return new DigitRules(enable, minLowerCaseChar, type);
+        return new DigitRules(enable, minDigitChar, type);
     }
 
     @Bean
     public SymbolRules getSymbolRules() {
-        CharType type = CharType.LOWER_CASE;
+        CharType type = CharType.SYMBOL;
         boolean enable = isTypeEnable(type.name());
-        return new SymbolRules(enable, minLowerCaseChar, type);
+        return new SymbolRules(enable, minSymbolChar, type);
     }
 
     @Bean

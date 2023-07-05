@@ -1,11 +1,16 @@
 package com.example.demo.validation.common;
 
+import com.example.demo.configuration.GlobalConfiguration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestPropertySource;
 
 @SpringBootTest
+@ContextConfiguration(classes = GlobalConfiguration.class)
+@TestPropertySource(locations="classpath:test.properties")
 public class NoRepeatRuleTest {
 
     @Autowired

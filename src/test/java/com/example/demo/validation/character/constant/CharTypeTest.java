@@ -1,11 +1,15 @@
-package com.example.demo.validation.constant;
+package com.example.demo.validation.character.constant;
 
-import com.example.demo.validation.character.constant.CharType;
+import com.example.demo.configuration.GlobalConfiguration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestPropertySource;
 
 @SpringBootTest
+@ContextConfiguration(classes = GlobalConfiguration.class)
+@TestPropertySource(locations="classpath:test.properties")
 public class CharTypeTest {
 
     private final static char UPPER_CASE_CHAR = 'A';

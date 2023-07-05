@@ -1,6 +1,6 @@
 package com.example.demo.annotation;
 
-import com.example.demo.validation.PasswordValidation;
+import com.example.demo.PasswordValidation;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.beans.factory.annotation.Autowired;

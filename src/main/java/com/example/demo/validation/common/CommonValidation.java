@@ -1,13 +1,11 @@
 package com.example.demo.validation.common;
 
-import com.example.demo.validation.PasswordValidation;
+import com.example.demo.PasswordValidation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
 public class CommonValidation implements PasswordValidation {
 
     @Autowired

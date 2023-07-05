@@ -1,9 +1,7 @@
 package com.example.demo.validation.character.rule.evaluation;
 
 import com.example.demo.validation.character.model.dto.CharConfig;
-import org.springframework.stereotype.Component;
 
-@Component
 public class EnableEvaluation implements Evaluation {
 
     @Override

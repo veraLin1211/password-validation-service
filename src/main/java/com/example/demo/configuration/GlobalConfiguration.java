@@ -1,16 +1,16 @@
 package com.example.demo.configuration;
 
-import com.example.demo.validation.character.CharValidation;
-import com.example.demo.validation.character.constant.CharType;
-import com.example.demo.validation.character.rule.DigitRules;
-import com.example.demo.validation.character.rule.LowerCaseRules;
-import com.example.demo.validation.character.rule.SymbolRules;
-import com.example.demo.validation.character.rule.UpperCaseRules;
-import com.example.demo.validation.character.rule.evaluation.EnableEvaluation;
-import com.example.demo.validation.character.rule.evaluation.MinCountEvaluation;
-import com.example.demo.validation.common.CommonValidation;
-import com.example.demo.validation.common.MaxMinLengthRule;
-import com.example.demo.validation.common.NoRepeatRule;
+import com.example.demo.validation.impl.CharValidation;
+import com.example.demo.validation.rule.character.constant.CharType;
+import com.example.demo.validation.rule.character.DigitRules;
+import com.example.demo.validation.rule.character.LowerCaseRules;
+import com.example.demo.validation.rule.character.SymbolRules;
+import com.example.demo.validation.rule.character.UpperCaseRules;
+import com.example.demo.validation.rule.character.evaluation.impl.EnableEvaluation;
+import com.example.demo.validation.rule.character.evaluation.impl.MinCountEvaluation;
+import com.example.demo.validation.impl.CommonValidation;
+import com.example.demo.validation.rule.common.MaxMinLengthRule;
+import com.example.demo.validation.rule.common.NoRepeatRule;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

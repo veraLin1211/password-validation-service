@@ -1,5 +1,6 @@
 package com.example.demo.annotation;
 
+import com.example.demo.annotation.impl.PasswordValidator;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 

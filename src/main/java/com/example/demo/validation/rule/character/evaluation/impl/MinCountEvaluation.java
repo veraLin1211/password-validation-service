@@ -7,7 +7,7 @@ public class MinCountEvaluation implements Evaluation {
 
     @Override
     public boolean evaluate(String password, CharConfig config) {
-        if(charNotEnabled(config)) return true;
+        if(!charIsEnabled(config)) return true;
         return pwdHasEnoughMatch(password, config);
     }
 
@@ -21,10 +21,6 @@ public class MinCountEvaluation implements Evaluation {
             idx ++;
         }
         return reachedMinCount(matchCount, minCount);
-    }
-
-    private boolean charNotEnabled(CharConfig config) {
-        return !config.isEnable();
     }
 
     private boolean reachedMinCount(int match, int min) {

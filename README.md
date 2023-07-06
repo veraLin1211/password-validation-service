@@ -2,7 +2,7 @@
 
 ### Branches
 - Main: The password validation service, use `./mvnw publish` to publish as a jar file.
-- Demo: Demo web application using the service.
+- Demo: Demo web application using the password validation service.
 
 ### Language & Framework
 ```
@@ -23,11 +23,11 @@ To generate test coverage report, run
 File will be generated under target/site/jacoco-resources, please open the `index.html` in browser.
 
 ### Publish
-The file `password-validation-service-1.0.0-SNAPSHOT.jar` will be put under target directory.
+Run command
 ```
     ./mvnw publish
 ```
-
+The file `password-validation-service-1.0.0-SNAPSHOT.jar` will be generated under target directory.
 ### Usage
 1. Put the generated jar file under ${baseDir}/local-maven-repo
 2. Add dependency to pom.xml
@@ -43,4 +43,21 @@ The file `password-validation-service-1.0.0-SNAPSHOT.jar` will be put under targ
 </dependencies>
 ```
 3. Run `./mvnw install`
-4. Put the @ValidatePassword annotation on the field you want to validate 
+4. Put the @ValidatePassword annotation on the field you want to validate
+
+### Run demo application
+```
+    ./mvnw spring-boot:run
+```
+The application will be run on port 8080, to test the api that provide validation to the password, call
+```
+    POST /user/register
+    Content-Type: Application/json
+```
+Below is an example of the request body json:
+```
+    {
+        "account": "test@gmail.com",
+        "password": "abc123"
+    }
+```

@@ -1,10 +1,10 @@
 package com.example.demo.validation.impl;
 
 import com.example.demo.PasswordValidation;
+import com.example.demo.validation.rule.common.CommonValidationRules;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class CommonValidation implements PasswordValidation {
 
@@ -13,14 +13,11 @@ public class CommonValidation implements PasswordValidation {
 
     @Override
     public boolean validate(String password) {
-        List<Boolean> results = rules.stream().map(it -> {
-            return it.validate(password);
-        }).collect(Collectors.toList());
-        return isAllValid(results);
-    }
-
-    private boolean isAllValid(List<Boolean> results) {
-        return !results.contains(false);
+        for(CommonValidationRules rule : rules) {
+            boolean isValid = rule.validate(password);
+            if(!isValid) return false;
+        }
+        return true;
     }
 
 }

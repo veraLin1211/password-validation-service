@@ -1,4 +1,4 @@
-package com.example.demo.validation.impl;
+package com.example.demo.validation.rule.common;
 
 public abstract class CommonValidationRules {
 

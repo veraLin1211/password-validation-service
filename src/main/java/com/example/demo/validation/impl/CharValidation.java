@@ -14,10 +14,11 @@ public class CharValidation implements PasswordValidation {
 
    @Override
    public boolean validate(String password) {
-       List<Boolean> results = rules.stream().map(rule -> {
-           return rule.validateAll(password);
-       }).collect(Collectors.toList());
-       return !results.contains(false);
+       for(CharValidationRules rules : rules) {
+           boolean isValid = rules.validateAll(password);
+           if(!isValid) return false;
+       }
+       return true;
    }
 
 }

@@ -1,6 +1,5 @@
 package com.example.demo.validation.rule.common;
 
-import com.example.demo.validation.impl.CommonValidationRules;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor

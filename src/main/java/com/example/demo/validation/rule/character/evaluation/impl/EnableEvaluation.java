@@ -11,7 +11,7 @@ public class EnableEvaluation implements Evaluation {
     }
 
     private boolean noInvalidCharacter(String password, CharConfig config) {
-        if(config.isEnable()) {
+        if(charIsEnabled(config)) {
             return true;
         } else {
             return checkPwdNotMatchPattern(password, config);

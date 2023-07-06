@@ -1,8 +1,6 @@
 package com.example.demo.validation.rule.common;
 
 
-import com.example.demo.validation.impl.CommonValidationRules;
-
 public class NoRepeatRule extends CommonValidationRules {
 
     @Override

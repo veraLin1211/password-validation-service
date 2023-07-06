@@ -26,15 +26,12 @@ public abstract class CharValidationRules {
     private CharType chartType;
 
     public boolean validateAll(String password) {
-        List<Boolean> results = evaluations.stream().map(it -> {
+        for(Evaluation evaluation : evaluations) {
             CharConfig config = new CharConfig(this.chartType, this.enable, this.minCount);
-            return it.evaluate(password, config);
-        }).collect(Collectors.toList());
-        return isAllValid(results);
-    }
-
-    private boolean isAllValid(List<Boolean> results) {
-        return !results.contains(false);
+            boolean isValid = evaluation.evaluate(password, config);
+            if(!isValid) return false;
+        }
+        return true;
     }
 
 }

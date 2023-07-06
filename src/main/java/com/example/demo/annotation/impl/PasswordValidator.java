@@ -21,11 +21,10 @@ public class PasswordValidator implements ConstraintValidator<ValidatePassword, 
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        boolean isValid = true;
         for(PasswordValidation validation : validations) {
-            isValid = validation.validate(value);
-            if(!isValid) break;
+            boolean isValid = validation.validate(value);
+            if(!isValid) return false;
         }
-        return isValid;
+        return true;
     }
 }

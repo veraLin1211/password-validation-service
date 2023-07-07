@@ -38,7 +38,7 @@ public class UserControllerTest {
 
     private final static String SUCCESS = "success";
 
-    private final static String REGISTER_URL = "/register";
+    private final static String REGISTER_URL = "/api/user";
 
     private final static ObjectMapper mapper = new ObjectMapper();
 

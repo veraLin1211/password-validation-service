@@ -22,12 +22,13 @@ To generate test coverage report, run
 ```
 File will be generated under target/site/jacoco-resources, please open the `index.html` in browser.
 
-### Publish
-Run command
+### Publish jar
+Run command 
 ```
-    ./mvnw publish
+    ./mvnw package
 ```
-The file `password-validation-service-1.0.0-SNAPSHOT.jar` will be generated under target directory.
+Will run all tests and 
+after passing tests the jar file `password-validation-service-1.0.0-SNAPSHOT.jar` will be generated under target directory.
 ### Usage
 1. Put the generated jar file under ${baseDir}/local-maven-repo
 2. Add dependency to pom.xml
